@@ -1,0 +1,61 @@
+https://chatgpt.com/c/b1c1cc4a-5c68-4dd0-af3b-feea0dac7de0?oai-dm=1
+
+PROMPT
+You are a data analyst for a fintech platform that provides infrastructure for venture capital.  You want to create a network graph that shows the relationship between GP, who are the fund mangers for funds on your platform.  
+
+The graph should have the following attributes:
+- Each GP should represent a node in the network.
+- Each node should have a weight that represents repulsion from all other nodes
+- Each node should have weights that represent attraction to other nodes based on:
+-- the overlap among the LPs that invest in their SPVs and funds.
+-- the portfolio companies that their SPVs and funds have managed.
+-- the funds and SPVs that they co-manage.
+
+For example, if you graph a GP against itself, then the attraction and repulsion offset each other and they represent a single point on the graph.  If the GPs co-manage a fund and occasionally do separate SPVs, they would be close on the graph, and if two GPs invest in different sectors and have totally different SPVs, they would be distant in the graph space. 
+
+You have access to an LLM that can generate and execute queries to pull the data.  Please formate a prompt for you LLM.
+
+RESPONSE
+
+To create a network graph that effectively visualizes the relationships among General Partners (GPs) on your fintech platform, you need to gather specific data points. Here's a structured prompt to guide your Large Language Model (LLM) in generating and executing the necessary queries:
+
+---
+
+**Prompt for Large Language Model to Generate Data Queries for Network Graph:**
+
+1. **Objective:** Generate a network graph to visualize relationships among GPs based on their overlaps and interactions.
+
+2. **Data Points Required:**
+   - **GP Identification:** List of all GPs (General Partners) on the platform.
+   - **LP Overlaps:** For each GP, identify the Limited Partners (LPs) who invest in their Special Purpose Vehicles (SPVs) and funds.
+   - **Portfolio Companies:** For each GP, detail the portfolio companies that their SPVs and funds have managed.
+   - **Co-Management Information:** Identify funds and SPVs that are co-managed by GPs.
+
+3. **Query Formation:**
+   - **GP List Query:** "Retrieve a comprehensive list of all General Partners active on our platform."
+   - **LP Overlap Query:** "For each GP, extract a list of LPs invested in their respective SPVs and funds."
+   - **Portfolio Companies Query:** "List all portfolio companies managed by each GP’s SPVs and funds."
+   - **Co-Management Query:** "Identify any funds or SPVs that are co-managed by multiple GPs."
+
+4. **Data Processing for Network Graph:**
+   - **Node Creation:** Each GP represents a node in the network.
+   - **Weight Calculation for Repulsion:** Assign a weight to each node to represent repulsion from other nodes.
+   - **Weight Calculation for Attraction:** Determine weights for attraction between nodes based on:
+     - Overlap in LPs.
+     - Shared management of portfolio companies.
+     - Co-management of funds and SPVs.
+
+5. **Graph Dynamics:**
+   - Describe how attraction and repulsion between nodes will be visually represented in the graph.
+   - Explain how the graph will depict GPs with high overlap (close proximity) versus GPs with low overlap (distant placement).
+
+6. **Output Format:**
+   - Specify the desired format for the network graph (e.g., 2D, 3D, interactive).
+
+7. **Additional Instructions:**
+   - Provide guidelines on how to interpret the graph.
+   - Request for any additional data points that might enhance the graph's effectiveness.
+
+---
+
+This prompt will guide the LLM to generate specific queries and process the data in a manner that will enable you to create an informative and visually appealing network graph of GP relationships.
